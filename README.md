@@ -2,7 +2,8 @@ This is an I2C Master bit bang implementation tested on Raspberry Pi 5.
 
 This example uses lgpiod library so make sure to install it:
     sudo apt-get install gpiod libgpiod-dev
-
+    
+For lgpiod documentation, you can check here: https://libgpiod-dlang.dpldocs.info/gpiod.html
 The main.c file can be modified to send commands to your target slave. 
 
 This design is portable to older Raspberry Pi boards. Just change the chip number below with the appropriate chip number for your board:
