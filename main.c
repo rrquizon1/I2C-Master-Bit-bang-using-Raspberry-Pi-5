@@ -35,7 +35,24 @@ int main() {
         printf("Read byte: 0x%02X\n", data_to_read[r]);
     }
     
- 
+    i2c_start();
+    i2c_write_byte(length,data_to_send2);
+    i2c_stop();
+    
+    printf("Feabits Read: MSPI Enabled \n");
+    i2c_start();
+    i2c_write_byte(length,data_to_send3); 
+    i2c_start();
+    i2c_write_byte(1,add_read); 
+    i2c_read_bytes(16, data_to_read2,0);
+    i2c_stop();
+    usleep(1000);
+    
+    for (int r=0;r<2;r++){
+        printf("Read byte: 0x%02X\n", data_to_read2[r]);
+    }
+
+    
 
 
     return 0;
