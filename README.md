@@ -5,9 +5,16 @@ This example uses lgpiod library so make sure to install it:
 
 The main.c file can be modified to send commands to your target slave. 
 
+This design is portable to older Raspberry Pi boards. Just change the chip number below with the appropriate chip number for your board:
+![image](https://github.com/user-attachments/assets/f56f8621-0472-444d-adae-576b720c9b45)
+
+This was ported and raspberry pi 3 by using "gpiochip0".
+
 To run the design on your raspberry pi:
 1. Run makefile to compile the executable files
 2. Run the program using ./rhodz_i2c
+
+
 
 
 This I2C master is tested on MachXO3LF Development Board. Sample Waveform transactions are below:
