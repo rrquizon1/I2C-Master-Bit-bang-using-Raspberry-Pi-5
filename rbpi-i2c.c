@@ -16,6 +16,13 @@ int pull_up=0; //to enable pull up. It is always enabled by default
  * 
  * 
  * */
+ 
+void delay(double delay){
+    for(int i=0;i<1000*delay;i++){
+        
+    }
+    
+}
 
 int configure_input(struct gpiod_line *line, const char *consumer, int pull_up)
 {
@@ -125,11 +132,11 @@ int i2c_write_byte(int length, unsigned char *data_bytes) {
 
             // Clock high
             gpiod_line_set_value(i2c_scl, 1);
-
+            delay(0.5);
 
             // Clock low
             gpiod_line_set_value(i2c_scl, 0);
-
+            delay(0.5);
             data <<= 1; // Shift data left by 1 bit
         }
 
@@ -193,14 +200,14 @@ int i2c_read_bit() {
 
 
     gpiod_line_set_value(i2c_scl, 1);
-    usleep(1);
+    delay(3);
 
     bit = gpiod_line_get_value(i2c_sda);
 
     
 
     gpiod_line_set_value(i2c_scl, 0);
-    
+    //delay(0.5);
     gpiod_line_release(i2c_sda);
     return bit;
 }
@@ -257,15 +264,15 @@ int i2c_read_bytes(int length, unsigned char *a_ByteRead, int send_ack) {
         for (int j = 0; j < 8; j++) {
             
             configure_input(i2c_sda, &a, pull_up);
-            usleep(10);
+            delay(0.5);
         byte = (byte << 1) | i2c_read_bit();
         
             }
-		usleep(10);
+		//delay(0.5);
 
         a_ByteRead[i] = byte;
 
-        usleep(10); // Small delay for timing
+       // delay(0.5); // Small delay for timing
 
         // Send ACK for all but the last byte or send NACK if it's the last byte and send_ack is 0
        if (i < bytes - 1 || send_ack) {
