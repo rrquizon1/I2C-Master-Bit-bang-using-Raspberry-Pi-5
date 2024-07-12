@@ -28,7 +28,8 @@ Feature Bits Read:
 ![image](https://github.com/user-attachments/assets/0c426385-ac5d-4f31-a5bd-7255751ce730)
 
 Sample Readout using the terminal:
-![image](https://github.com/user-attachments/assets/fd3582de-dc7d-4535-ac1c-094e450de13f)
+![I2C_screenshot](https://github.com/user-attachments/assets/b9b48c86-c262-4cce-a814-0239aac6855e)
+
 
   
 
