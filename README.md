@@ -8,6 +8,7 @@ For lgpiod documentation, you can check here: https://libgpiod-dlang.dpldocs.inf
 The main.c file can be modified to send commands to your target slave. 
 
 This design is portable to older Raspberry Pi boards. Just change the chip number below with the appropriate chip number for your board in rbpi-i2c.c:
+
 ![image](https://github.com/user-attachments/assets/f56f8621-0472-444d-adae-576b720c9b45)
 
 This was ported to raspberry pi 3 by using "gpiochip0".
