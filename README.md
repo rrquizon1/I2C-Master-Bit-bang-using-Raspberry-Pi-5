@@ -19,7 +19,7 @@ To run the design on your raspberry pi:
 
 
 
-This I2C master is tested on MachXO3LF Development Board. Sample Waveform transactions are below:
+This I2C master is tested on MachXO3LF Starter kit. Sample Waveform transactions are below:
 
 Device ID Read.
 ![image](https://github.com/user-attachments/assets/45788e82-9bba-499b-8286-dd786dbf65ba)
